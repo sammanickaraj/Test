@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -29,7 +30,13 @@ public class Submit extends HttpServlet {
 		System.out.println(lname);
 		System.out.println(newAge);
 		try {
+			response.setContentType("text/html");
+			PrintWriter out=response.getWriter();
+			out.println("<html><body>");
+			out.println("Hi "+fname+" "+lname +", how are you?");
+			out.println("</body></html>");
 			updateTable();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
