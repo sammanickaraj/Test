@@ -33,7 +33,9 @@ public class Submit extends HttpServlet {
 			response.setContentType("text/html");
 			PrintWriter out=response.getWriter();
 			out.println("<html><body>");
-			out.println("Hi "+fname+" "+lname +", how are you?");
+			out.println("First Name is: "+fname+"<br>"+
+						"Last Name is: "+lname+"<br>"+
+						"Age is: "+newAge+"<br>");
 			out.println("</body></html>");
 			updateTable();
 			
