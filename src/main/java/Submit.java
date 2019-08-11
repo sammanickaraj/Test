@@ -33,9 +33,11 @@ public class Submit extends HttpServlet {
 			response.setContentType("text/html");
 			PrintWriter out=response.getWriter();
 			out.println("<html><body>");
-			out.println("First Name is: "+fname+"<br>"+
+			out.println("<h3>Registration complete with below details</h3><br>"+
+						"First Name is: "+fname+"<br>"+
 						"Last Name is: "+lname+"<br>"+
 						"Age is: "+newAge+"<br>");
+			out.println("<p>Click the link to go back to Registration page</p><a href=\"http://localhost:8080/NewApp\">Registration Page</a><br>");
 			out.println("</body></html>");
 			updateTable();
 			
@@ -60,7 +62,7 @@ public class Submit extends HttpServlet {
 	public static Connection getConnection() throws Exception {
 		try {
 			String driver = "com.mysql.jdbc.Driver";
-			String url = "jdbc:mysql://192.168.0.105:3306/testdb";
+			String url = "jdbc:mysql://localhost:3306/testdb";
 			String dbName = "root";
 			String dbPass = "root";
 			Class.forName(driver);		

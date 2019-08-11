@@ -10,9 +10,19 @@
   	<description></description>
   	<servlet-class>Submit</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>GetDBdetail</servlet-name>
+  	<display-name>GetDBdetail</display-name>
+  	<description></description>
+  	<servlet-class>GetDBdetail</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Submit</servlet-name>
   	<url-pattern>/Submit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetDBdetail</servlet-name>
+  	<url-pattern>/GetDBdetail</url-pattern>
   </servlet-mapping>
   <welcome-file-list>  
    <welcome-file>Index.html</welcome-file>  
