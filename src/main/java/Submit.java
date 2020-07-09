@@ -38,6 +38,7 @@ public class Submit extends HttpServlet {
 						"Last Name is: "+lname+"<br>"+
 						"Age is: "+newAge+"<br>");
 			out.println("<p>Click the link to go back to Registration page</p><a href=\"http://localhost:8080/NewApp\">Registration Page</a><br>");
+			out.println("<br/>Added "+fname+" to database");
 			out.println("</body></html>");
 			updateTable();
 			
