@@ -38,21 +38,22 @@ public class Submit extends HttpServlet {
 						"Last Name is: "+lname+"<br>"+
 						"Age is: "+newAge+"<br>");
 			out.println("<p>Click the link to go back to Registration page</p><a href=\"http://localhost:8080/NewApp\">Registration Page</a><br>");
-			out.println("<br/>Added "+fname+" to database");
+//			out.println("<br/>Added "+fname+" to database");
+//			out.println("</body></html>");
+			updateTable(out);
 			out.println("</body></html>");
-			updateTable();
-			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public static void updateTable() throws Exception{
+	public static void updateTable(PrintWriter obj) throws Exception{
 		try {
 			Connection con = getConnection();
 			PreparedStatement create = con.prepareStatement("INSERT INTO Persons (FirstName,LastName,Age) "+"VALUES('"+fname+"', '"+lname+"', '"+newAge+"');");
 			create.executeUpdate();
+                        obj.println("<br/>Added "+fname+" to database");
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
@@ -65,7 +66,7 @@ public class Submit extends HttpServlet {
 			String driver = "com.mysql.jdbc.Driver";
 			String url = "jdbc:mysql://localhost:3306/testdb";
 			String dbName = "root";
-			String dbPass = "root";
+			String dbPass = "Superman@9";
 			Class.forName(driver);		
 			Connection conn = DriverManager.getConnection(url, dbName, dbPass);
 			System.out.println("Connected");
