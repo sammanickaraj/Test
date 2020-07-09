@@ -11,7 +11,7 @@ public class Main {
 		public static Connection getConnection() throws Exception {
 			try {
 				String driver = "com.mysql.jdbc.Driver";
-				String url = "jdbc:mysql://192.168.0.105:3306/testdb";
+				String url = "jdbc:mysql://localhost:3306/testdb";
 				String dbName = "root";
 				String dbPass = "";
 				Class.forName(driver);
