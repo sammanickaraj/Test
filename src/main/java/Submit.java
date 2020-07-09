@@ -66,7 +66,7 @@ public class Submit extends HttpServlet {
 			String driver = "com.mysql.jdbc.Driver";
 			String url = "jdbc:mysql://localhost:3306/testdb";
 			String dbName = "root";
-			String dbPass = "Superman@9";
+			String dbPass = "";
 			Class.forName(driver);		
 			Connection conn = DriverManager.getConnection(url, dbName, dbPass);
 			System.out.println("Connected");
