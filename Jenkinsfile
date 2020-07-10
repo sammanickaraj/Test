@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Running build automation'
-                sh '/bin/mvn clean package
+                sh '/bin/mvn clean package'
                 // 
             }
         }
