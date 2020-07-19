@@ -1,11 +1,18 @@
 pipeline {
     agent any
+    environment {
+     BRANCH_NAME = "${GIT_BRANCH.split("/")[1]}"
+  }
     stages {
         stage("Build") {
             steps {
+                when {
+                    expression {
+                        BRANCH_NAME == 'dev'
+                    }
+                }
                 echo 'Building the application...'
-                echo "Printing branch ${env.GIT_BRANCH}"
-            }
+                }
         }
         stage("Test") {
             steps {
