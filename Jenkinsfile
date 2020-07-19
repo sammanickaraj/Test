@@ -8,7 +8,7 @@ pipeline {
             steps {
                 when {
                     expression {
-                        BRANCH_NAME == 'dev'
+                        ${BRANCH_NAME} == 'dev'
                     }
                 }
                 echo 'Building the application...'
