@@ -4,7 +4,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo 'Building the application...'
-                echo "Printing branch ${BRANCH_NAME}"
+                echo "Printing branch ${env.GIT_BRANCH}"
             }
         }
         stage("Test") {
