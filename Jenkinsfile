@@ -1,12 +1,22 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('Build') { 
+        stage("Build") {
             steps {
-                echo 'Running build automation'
-                sh '/bin/mvn clean package'
-                // 
+                echo 'building the application...'
             }
         }
+        stage("Test") {
+            steps {
+                echo 'Testing the application...'
+            }
+        }
+        stage("Deploy") {
+            steps {
+                echo 'Deploying the application...'
+            }
+
+        }
     }
+
 }
