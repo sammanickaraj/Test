@@ -4,6 +4,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo 'Building the application...'
+                echo "Printing branch ${env.BRANCH_NAME}"
             }
         }
         stage("Test") {
